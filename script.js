@@ -162,6 +162,8 @@ if (appForm) {
     nextBtn.style.display = index === totalSteps - 1 ? 'none' : 'inline-flex';
     submitBtn.style.display = index === totalSteps - 1 ? 'inline-flex' : 'none';
 
+    if (index === totalSteps - 1) populateReview();
+
     window.scrollTo({ top: form.offsetTop - 100, behavior: 'smooth' });
   }
 
@@ -273,11 +275,66 @@ if (appForm) {
     return valid;
   }
 
+  stepItems.forEach((item) => {
+    item.addEventListener('click', () => {
+      const stepIndex = parseInt(item.dataset.step) - 1;
+      if (stepIndex <= currentStep) {
+        currentStep = stepIndex;
+        showStep(currentStep);
+      }
+    });
+  });
+
+  function saveFormData() {
+    const fields = form.querySelectorAll('input, select, textarea');
+    const data = {};
+    fields.forEach((f) => {
+      if (f.name) data[f.name] = f.type === 'checkbox' ? f.checked : f.value;
+    });
+    const ecs = [];
+    form.querySelectorAll('[name="ec\\[\\]"]').forEach((i) => ecs.push(i.value));
+    data.ecs = ecs;
+    sessionStorage.setItem('meridianForm', JSON.stringify(data));
+  }
+
+  function loadFormData() {
+    const raw = sessionStorage.getItem('meridianForm');
+    if (!raw) return;
+    try {
+      const data = JSON.parse(raw);
+      form.querySelectorAll('input, select, textarea').forEach((f) => {
+        if (!f.name) return;
+        if (f.type === 'checkbox') f.checked = !!data[f.name];
+        else if (f.name !== 'ec[]') f.value = data[f.name] || '';
+      });
+      const ecs = data.ecs || [];
+      const ecContainer = document.getElementById('ec-list');
+      if (ecContainer && ecs.length > 0) {
+        ecContainer.innerHTML = '';
+        ecs.forEach((val) => {
+          const item = document.createElement('div');
+          item.className = 'ec-item';
+          item.innerHTML = `
+            <input type="text" name="ec[]" placeholder="Activity name" value="${val.replace(/"/g, '&quot;')}">
+            <button type="button" class="ec-remove" aria-label="Remove activity">&times;</button>
+          `;
+          ecContainer.appendChild(item);
+          item.querySelector('.ec-remove').addEventListener('click', () => item.remove());
+        });
+      }
+      if (essayField && wordCount) {
+        const wc = essayField.value.trim() ? essayField.value.trim().split(/\s+/).length : 0;
+        wordCount.textContent = `${wc} words`;
+      }
+    } catch (_) {}
+  }
+
+  form.addEventListener('input', saveFormData);
+
   nextBtn.addEventListener('click', () => {
     if (!validateStep(currentStep)) return;
     currentStep++;
     showStep(currentStep);
-    if (currentStep === totalSteps - 1) populateReview();
     stepItems[currentStep]?.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
   });
 
@@ -305,10 +362,33 @@ if (appForm) {
     }, 1200);
   });
 
+  function resetForm() {
+    form.reset();
+    const ecContainer = document.getElementById('ec-list');
+    if (ecContainer) {
+      ecContainer.innerHTML = `<div class="ec-item">
+        <input type="text" name="ec[]" placeholder="Activity name">
+        <button type="button" class="ec-remove" aria-label="Remove activity">&times;</button>
+      </div>`;
+      ecContainer.querySelector('.ec-remove').addEventListener('click', () => {
+        if (ecContainer.children.length > 1) ecContainer.querySelector('.ec-item').remove();
+      });
+    }
+    form.querySelectorAll('.form-error').forEach((e) => e.textContent = '');
+    form.querySelectorAll('.error').forEach((e) => e.classList.remove('error'));
+    if (essayField && wordCount) wordCount.textContent = '0 words';
+    const agree = document.getElementById('agree');
+    if (agree) agree.checked = false;
+    sessionStorage.removeItem('meridianForm');
+    currentStep = 0;
+    showStep(0);
+  }
+
   modal.addEventListener('click', (e) => {
     if (e.target === modal) {
       modal.classList.remove('open');
       document.body.style.overflow = '';
+      resetForm();
     }
   });
 
@@ -316,6 +396,7 @@ if (appForm) {
     if (e.key === 'Escape' && modal?.classList.contains('open')) {
       modal.classList.remove('open');
       document.body.style.overflow = '';
+      resetForm();
     }
   });
 
@@ -347,6 +428,7 @@ if (appForm) {
     });
   }
 
+  loadFormData();
   showStep(0);
 }
 
