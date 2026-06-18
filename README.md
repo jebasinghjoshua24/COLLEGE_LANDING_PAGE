@@ -22,3 +22,8 @@ Open any `.html` file in a browser. No build step required.
 # Serve locally with any static server
 npx serve .
 ```
+
+## Live Site
+
+Deployed via Netlify:  
+[https://relaxed-empanada-7ef920.netlify.app/](https://relaxed-empanada-7ef920.netlify.app/)
