@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <meta name="description" content="Take a virtual tour of Meridian College. Explore our historic campus, state-of-the-art facilities, and student life.">
+  <title>Virtual Tour | Meridian College</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Prata&family=Sora:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <nav id="navbar" role="navigation" aria-label="Main navigation">
+    <div class="container">
+      <a href="index.html" class="nav-logo" aria-label="Meridian College home">
+        <svg width="28" height="28" viewBox="0 0 28 28" fill="none" aria-hidden="true">
+          <path d="M14 2L2 9v3l12-7 12 7V9L14 2z" fill="currentColor"/>
+          <path d="M2 14v3l12 7 12-7v-3L14 18 2 14z" fill="currentColor" opacity="0.6"/>
+          <path d="M2 19v3l12 7 12-7v-3L14 21 2 19z" fill="currentColor" opacity="0.3"/>
+        </svg>
+        Meridian
+      </a>
+
+      <button class="nav-toggle" aria-label="Toggle navigation menu" aria-expanded="false">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+
+      <ul class="nav-links" role="menubar">
+        <li role="none"><a href="index.html" role="menuitem">Home</a></li>
+        <li role="none"><a href="index.html#mission" role="menuitem">About</a></li>
+        <li role="none"><a href="index.html#programs" role="menuitem">Programs</a></li>
+        <li role="none"><a href="admissions.html" role="menuitem">Admissions</a></li>
+        <li role="none"><a href="tour.html" role="menuitem" class="active">Virtual Tour</a></li>
+        <li role="none"><a href="admissions.html" class="btn btn-primary nav-cta" role="menuitem">Apply Now</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <section class="tour-hero">
+    <div class="tour-hero-bg">
+      <img
+        src="https://images.unsplash.com/photo-1541339907198-e08756dedf3f?auto=format&fit=crop&w=1920&q=80"
+        srcset="https://images.unsplash.com/photo-1541339907198-e08756dedf3f?auto=format&fit=crop&w=1200&q=80 1200w, https://images.unsplash.com/photo-1541339907198-e08756dedf3f?auto=format&fit=crop&w=1920&q=80 1920w"
+        sizes="100vw"
+        alt="Aerial view of Meridian College campus with historic brick buildings"
+        loading="eager"
+      >
+    </div>
+    <div class="tour-hero-overlay"></div>
+    <div class="container">
+      <div class="tour-hero-content">
+        <p class="tour-hero-label">Virtual Tour</p>
+        <h1>Explore Meridian<br>From Anywhere</h1>
+        <p>Walk through our historic campus, peek inside classrooms and labs, and experience daily life — all from your screen.</p>
+      </div>
+    </div>
+    <div class="tour-hero-scroll" aria-hidden="true">
+      <span>Explore stops below</span>
+      <svg width="16" height="24" viewBox="0 0 16 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+        <path d="M8 2v20M2 16l6 6 6-6"/>
+      </svg>
+    </div>
+  </section>
+
+  <section id="tour-stops">
+    <div class="container">
+      <p class="section-label reveal">Campus Stops</p>
+      <h2 class="section-title reveal">6 Stops Across Campus</h2>
+      <p class="section-subtitle reveal">Click any stop to explore in detail. From the historic reading room to the innovation labs, every corner of Meridian has a story.</p>
+
+      <div class="tour-grid" id="tour-grid">
+        <article class="tour-stop reveal reveal-delay-1" data-index="0" tabindex="0" role="button" aria-label="View Memorial Library details">
+          <div class="tour-stop-image">
+            <img src="https://images.unsplash.com/photo-1521587760476-6c12a4b040da?auto=format&fit=crop&w=600&q=80" alt="" loading="lazy">
+          </div>
+          <div class="tour-stop-body">
+            <span class="tour-stop-tag">Landmark</span>
+            <h3>Memorial Library</h3>
+            <p>Beaux-arts reading room housing over 2 million volumes, rare manuscript collections, and 24-hour study spaces.</p>
+          </div>
+        </article>
+
+        <article class="tour-stop reveal reveal-delay-2" data-index="1" tabindex="0" role="button" aria-label="View Innovation Lab details">
+          <div class="tour-stop-image">
+            <img src="https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?auto=format&fit=crop&w=600&q=80" alt="" loading="lazy">
+          </div>
+          <div class="tour-stop-body">
+            <span class="tour-stop-tag tour-stop-tag-gold">Facilities</span>
+            <h3>Innovation Lab</h3>
+            <p>State-of-the-art maker space with 3D printers, laser cutters, robotics stations, and collaborative project studios.</p>
+          </div>
+        </article>
+
+        <article class="tour-stop reveal reveal-delay-3" data-index="2" tabindex="0" role="button" aria-label="View Student Union details">
+          <div class="tour-stop-image">
+            <img src="https://images.unsplash.com/photo-1523240795612-9a054b0db644?auto=format&fit=crop&w=600&q=80" alt="" loading="lazy">
+          </div>
+          <div class="tour-stop-body">
+            <span class="tour-stop-tag tour-stop-tag-gold">Student Life</span>
+            <h3>Student Union</h3>
+            <p>The heart of campus life — dining hall, coffee bar, student organization offices, game lounge, and event spaces.</p>
+          </div>
+        </article>
+
+        <article class="tour-stop reveal" data-index="3" tabindex="0" role="button" aria-label="View Science Center details">
+          <div class="tour-stop-image">
+            <img src="https://images.unsplash.com/photo-1564981797816-1043664bf78d?auto=format&fit=crop&w=600&q=80" alt="" loading="lazy">
+          </div>
+          <div class="tour-stop-body">
+            <span class="tour-stop-tag">Academics</span>
+            <h3>Science Center</h3>
+            <p>Modern labs for biology, chemistry, and physics research, plus a rooftop observatory with a 16-inch telescope.</p>
+          </div>
+        </article>
+
+        <article class="tour-stop reveal reveal-delay-2" data-index="4" tabindex="0" role="button" aria-label="View Performing Arts Center details">
+          <div class="tour-stop-image">
+            <img src="https://images.unsplash.com/photo-1498243691581-b145c3f54a5a?auto=format&fit=crop&w=600&q=80" alt="" loading="lazy">
+          </div>
+          <div class="tour-stop-body">
+            <span class="tour-stop-tag">Arts</span>
+            <h3>Performing Arts Center</h3>
+            <p>A 1,200-seat concert hall, black box theater, art galleries, and practice studios for music and dance.</p>
+          </div>
+        </article>
+
+        <article class="tour-stop reveal reveal-delay-3" data-index="5" tabindex="0" role="button" aria-label="View Residence Quad details">
+          <div class="tour-stop-image">
+            <img src="https://images.unsplash.com/photo-1559136555-9303baea8ebd?auto=format&fit=crop&w=600&q=80" alt="" loading="lazy">
+          </div>
+          <div class="tour-stop-body">
+            <span class="tour-stop-tag">Residential</span>
+            <h3>Residence Quad</h3>
+            <p>Four historic residence halls arranged around a central green with gardens, hammocks, and outdoor gathering spaces.</p>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section id="tour-map">
+    <div class="container">
+      <p class="section-label reveal">Campus Map</p>
+      <h2 class="section-title reveal">Find Your Way Around</h2>
+
+      <div class="map-container reveal">
+        <div class="map-svg" aria-label="Campus map showing location of all tour stops">
+          <svg viewBox="0 0 800 500" fill="none" xmlns="http://www.w3.org/2000/svg" role="img">
+            <rect x="40" y="40" width="720" height="420" rx="12" stroke="currentColor" stroke-width="0.5" stroke-dasharray="4 4" fill="none" opacity="0.2"/>
+            <path d="M100 250 L400 120 L700 250 L400 380 Z" stroke="currentColor" stroke-width="1" fill="currentColor" fill-opacity="0.03"/>
+            <path d="M200 200 L400 150 L600 200 L400 300 Z" stroke="currentColor" stroke-width="0.5" fill="currentColor" fill-opacity="0.02"/>
+            <rect x="180" y="80" width="440" height="60" rx="4" fill="currentColor" fill-opacity="0.04"/>
+            <text x="400" y="115" text-anchor="middle" fill="currentColor" font-size="11" opacity="0.3" font-family="Sora, sans-serif">CAMPUS COMMONS</text>
+
+            <circle cx="280" cy="220" r="8" fill="var(--primary)" class="map-dot" data-index="0"/>
+            <text x="280" y="245" text-anchor="middle" fill="currentColor" font-size="8" opacity="0.5" font-family="Sora, sans-serif">Library</text>
+
+            <circle cx="400" cy="160" r="8" fill="var(--accent)" class="map-dot" data-index="1"/>
+            <text x="400" y="185" text-anchor="middle" fill="currentColor" font-size="8" opacity="0.5" font-family="Sora, sans-serif">Innovation Lab</text>
+
+            <circle cx="520" cy="220" r="8" fill="var(--accent)" class="map-dot" data-index="2"/>
+            <text x="520" y="245" text-anchor="middle" fill="currentColor" font-size="8" opacity="0.5" font-family="Sora, sans-serif">Student Union</text>
+
+            <circle cx="340" cy="310" r="8" fill="var(--primary)" class="map-dot" data-index="3"/>
+            <text x="340" y="335" text-anchor="middle" fill="currentColor" font-size="8" opacity="0.5" font-family="Sora, sans-serif">Science Center</text>
+
+            <circle cx="480" cy="300" r="8" fill="var(--primary)" class="map-dot" data-index="4"/>
+            <text x="480" y="325" text-anchor="middle" fill="currentColor" font-size="8" opacity="0.5" font-family="Sora, sans-serif">Performing Arts</text>
+
+            <circle cx="400" cy="390" r="8" fill="var(--accent)" class="map-dot" data-index="5"/>
+            <text x="400" y="415" text-anchor="middle" fill="currentColor" font-size="8" opacity="0.5" font-family="Sora, sans-serif">Residence Quad</text>
+
+            <path d="M280 220 L400 160" stroke="currentColor" stroke-width="0.5" stroke-dasharray="3 3" opacity="0.15"/>
+            <path d="M400 160 L520 220" stroke="currentColor" stroke-width="0.5" stroke-dasharray="3 3" opacity="0.15"/>
+            <path d="M280 220 L340 310" stroke="currentColor" stroke-width="0.5" stroke-dasharray="3 3" opacity="0.15"/>
+            <path d="M520 220 L480 300" stroke="currentColor" stroke-width="0.5" stroke-dasharray="3 3" opacity="0.15"/>
+            <path d="M340 310 L480 300" stroke="currentColor" stroke-width="0.5" stroke-dasharray="3 3" opacity="0.15"/>
+            <path d="M340 310 L400 390" stroke="currentColor" stroke-width="0.5" stroke-dasharray="3 3" opacity="0.15"/>
+            <path d="M480 300 L400 390" stroke="currentColor" stroke-width="0.5" stroke-dasharray="3 3" opacity="0.15"/>
+          </svg>
+        </div>
+
+        <div class="map-legend">
+          <span class="map-legend-item">
+            <span class="map-legend-dot" style="background: var(--primary);"></span>
+            Academic
+          </span>
+          <span class="map-legend-item">
+            <span class="map-legend-dot" style="background: var(--accent);"></span>
+            Student Life
+          </span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="tour-cta">
+    <div class="container">
+      <div class="cta-block">
+        <h2 class="section-title reveal">Ready to See It in Person?</h2>
+        <p class="reveal">Nothing beats walking the campus yourself. Schedule a guided tour and experience Meridian firsthand.</p>
+        <div class="cta-actions reveal">
+          <a href="#" class="btn btn-primary">Schedule a Visit</a>
+          <a href="admissions.html" class="btn btn-outline-dark">Start Your Application</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a href="index.html" class="nav-logo" aria-label="Meridian College home">
+            <svg width="24" height="24" viewBox="0 0 28 28" fill="none" aria-hidden="true">
+              <path d="M14 2L2 9v3l12-7 12 7V9L14 2z" fill="currentColor"/>
+              <path d="M2 14v3l12 7 12-7v-3L14 18 2 14z" fill="currentColor" opacity="0.6"/>
+              <path d="M2 19v3l12 7 12-7v-3L14 21 2 19z" fill="currentColor" opacity="0.3"/>
+            </svg>
+            Meridian
+          </a>
+          <p>Founded in 1959, Meridian College is a private institution dedicated to academic excellence, research, and community engagement.</p>
+        </div>
+        <div class="footer-col">
+          <h4>Academics</h4>
+          <ul>
+            <li><a href="#">Undergraduate Programs</a></li>
+            <li><a href="#">Graduate Programs</a></li>
+            <li><a href="#">Online Learning</a></li>
+            <li><a href="#">Academic Calendar</a></li>
+            <li><a href="#">Library</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Admissions</h4>
+          <ul>
+            <li><a href="admissions.html">Apply Now</a></li>
+            <li><a href="#">Tuition &amp; Aid</a></li>
+            <li><a href="#">Visit Campus</a></li>
+            <li><a href="#">Request Info</a></li>
+            <li><a href="#">International Students</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Contact</h4>
+          <ul>
+            <li><a href="tel:+15551234567">(555) 123-4567</a></li>
+            <li><a href="mailto:admissions@meridian.edu">admissions@meridian.edu</a></li>
+            <li><a href="#">742 College Avenue<br>Meridian, MA 02115</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span>&copy; 2026 Meridian College. All rights reserved.</span>
+        <div class="footer-social">
+          <a href="#" aria-label="Follow us on Instagram">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <rect x="2" y="2" width="20" height="20" rx="5"/><path d="M16 11.37A4 4 0 1112.63 8 4 4 0 0116 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/>
+            </svg>
+          </a>
+          <a href="#" aria-label="Follow us on LinkedIn">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <path d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/>
+            </svg>
+          </a>
+          <a href="#" aria-label="Follow us on Twitter / X">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <path d="M4 4l11.733 16h4.267l-11.733 -16zM4 20l6.768 -6.768M19.5 4l-6.768 6.768"/>
+            </svg>
+          </a>
+          <a href="#" aria-label="Watch us on YouTube">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <path d="M22.54 6.42a2.78 2.78 0 00-1.94-2C18.88 4 12 4 12 4s-6.88 0-8.6.46a2.78 2.78 0 00-1.94 2A29 29 0 001 11.75a29 29 0 00.46 5.33A2.78 2.78 0 003.4 19c1.72.46 8.6.46 8.6.46s6.88 0 8.6-.46a2.78 2.78 0 001.94-2 29 29 0 00.46-5.25 29 29 0 00-.46-5.33z"/><polygon points="9.75 15.02 15.5 11.75 9.75 8.48 9.75 15.02"/>
+            </svg>
+          </a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <div class="tour-modal-overlay" id="tour-modal" role="dialog" aria-modal="true" aria-label="Campus stop detail">
+    <div class="tour-modal">
+      <button class="tour-modal-close" aria-label="Close tour stop">&times;</button>
+
+      <button class="tour-modal-arrow tour-modal-prev" aria-label="Previous stop">
+        <svg width="20" height="20" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <path d="M12 4l-6 6 6 6"/>
+        </svg>
+      </button>
+      <button class="tour-modal-arrow tour-modal-next" aria-label="Next stop">
+        <svg width="20" height="20" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <path d="M8 4l6 6-6 6"/>
+        </svg>
+      </button>
+
+      <div class="tour-modal-image">
+        <img src="" alt="" id="modal-image">
+      </div>
+
+      <div class="tour-modal-body">
+        <span class="tour-stop-tag" id="modal-tag"></span>
+        <h2 id="modal-title"></h2>
+        <p id="modal-desc"></p>
+        <div class="tour-modal-extra">
+          <div class="modal-fact">
+            <span class="modal-fact-label">Location</span>
+            <span class="modal-fact-value" id="modal-location"></span>
+          </div>
+          <div class="modal-fact">
+            <span class="modal-fact-label">Hours</span>
+            <span class="modal-fact-value" id="modal-hours"></span>
+          </div>
+        </div>
+      </div>
+
+      <div class="tour-modal-counter">
+        <span id="modal-counter"></span>
+      </div>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

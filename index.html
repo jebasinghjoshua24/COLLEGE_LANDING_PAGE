@@ -1,0 +1,423 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <meta name="description" content="Meridian College — Where curiosity meets rigor. Explore our academic programs, campus life, and admissions.">
+  <title>Meridian College | Excellence in Education</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Prata&family=Sora:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <nav id="navbar" role="navigation" aria-label="Main navigation">
+    <div class="container">
+      <a href="#" class="nav-logo" aria-label="Meridian College home">
+        <svg width="28" height="28" viewBox="0 0 28 28" fill="none" aria-hidden="true">
+          <path d="M14 2L2 9v3l12-7 12 7V9L14 2z" fill="currentColor"/>
+          <path d="M2 14v3l12 7 12-7v-3L14 18 2 14z" fill="currentColor" opacity="0.6"/>
+          <path d="M2 19v3l12 7 12-7v-3L14 21 2 19z" fill="currentColor" opacity="0.3"/>
+        </svg>
+        Meridian
+      </a>
+
+      <button class="nav-toggle" aria-label="Toggle navigation menu" aria-expanded="false">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+
+      <ul class="nav-links" role="menubar">
+        <li role="none"><a href="#hero" role="menuitem" class="active">Home</a></li>
+        <li role="none"><a href="index.html#mission" role="menuitem">About</a></li>
+        <li role="none"><a href="index.html#programs" role="menuitem">Programs</a></li>
+        <li role="none"><a href="tour.html" role="menuitem">Virtual Tour</a></li>
+        <li role="none"><a href="admissions.html" role="menuitem">Admissions</a></li>
+        <li role="none"><a href="admissions.html" class="btn btn-primary nav-cta" role="menuitem">Apply Now</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <section id="hero">
+    <div class="hero-bg">
+      <img
+        src="https://images.unsplash.com/photo-1562774053-701939374585?auto=format&fit=crop&w=1920&q=80"
+        srcset="https://images.unsplash.com/photo-1562774053-701939374585?auto=format&fit=crop&w=1200&q=80 1200w, https://images.unsplash.com/photo-1562774053-701939374585?auto=format&fit=crop&w=1920&q=80 1920w"
+        sizes="100vw"
+        alt="Historic university building facade at golden hour"
+        loading="eager"
+      >
+    </div>
+    <div class="hero-overlay"></div>
+
+    <div class="container">
+      <div class="hero-content">
+        <div class="hero-badge">
+          <svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true">
+            <circle cx="7" cy="7" r="6" stroke="currentColor" stroke-width="1.5"/>
+            <path d="M7 4v4M7 10v.01" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+          </svg>
+          EST. 1959 — Regionally Accredited
+        </div>
+
+        <h1>Shape Your Future<br>at Meridian College</h1>
+
+        <p>Where academic rigor meets real-world impact. Discover a community built for thinkers, makers, and leaders ready to make their mark.</p>
+
+        <div class="hero-actions">
+          <a href="admissions.html" class="btn btn-primary">Start Your Application</a>
+          <a href="tour.html" class="btn btn-outline">Take Virtual Tour</a>
+        </div>
+
+        <div class="hero-search" role="search">
+          <input type="search" placeholder="Search programs, faculty, events..." aria-label="Search the college website">
+          <button type="submit" aria-label="Submit search">
+            Search
+            <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true">
+              <circle cx="6.5" cy="6.5" r="5" stroke="currentColor" stroke-width="1.5"/>
+              <path d="M10.5 10.5L14 14" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+            </svg>
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <div class="hero-scroll" aria-hidden="true">
+      Scroll
+      <div class="scroll-line"></div>
+    </div>
+  </section>
+
+  <section id="mission">
+    <div class="container">
+      <div class="mission-grid">
+        <div class="mission-text">
+          <p class="section-label reveal">Our Mission</p>
+          <h2 class="section-title reveal">Excellence Rooted in Tradition,<br>Driven by Innovation</h2>
+          <p class="section-subtitle reveal">
+            For over six decades, Meridian College has been a place where curiosity meets rigor. We believe education is not just about acquiring knowledge — it is about developing the wisdom to use it well.
+          </p>
+          <p class="section-subtitle reveal" style="margin-top: var(--space-md);">
+            Our faculty are scholars, mentors, and practitioners who bring real-world experience into every classroom. With a student-to-faculty ratio of 12:1, every voice is heard.
+          </p>
+          <div class="mission-stat reveal">
+            <strong>12,000+</strong>
+            <span>Alumni across 47 countries</span>
+          </div>
+        </div>
+        <div class="mission-image reveal">
+          <img
+            src="https://images.unsplash.com/photo-1541339907198-e08756dedf3f?auto=format&fit=crop&w=800&q=80"
+            alt="Historic campus building with ivy-covered brick facade at sunset"
+            loading="lazy"
+          >
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="programs">
+    <div class="container">
+      <p class="section-label reveal">Academic Programs</p>
+      <h2 class="section-title reveal">Find Your Path</h2>
+      <p class="section-subtitle reveal">Across six schools, we offer over 80 undergraduate and graduate programs designed to prepare students for meaningful careers and purposeful lives.</p>
+
+      <div class="programs-grid">
+        <article class="program-card reveal reveal-delay-1">
+          <div class="program-icon" aria-hidden="true">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M12 2L2 7l10 5 10-5-10-5z"/>
+              <path d="M2 17l10 5 10-5"/>
+              <path d="M2 12l10 5 10-5"/>
+            </svg>
+          </div>
+          <h3>School of Arts &amp; Sciences</h3>
+          <p>Rigorous liberal arts education with majors spanning literature, mathematics, philosophy, biology, and the physical sciences.</p>
+          <a href="#" class="program-link" aria-label="View Arts and Sciences programs">
+            Explore Programs
+            <svg width="14" height="14" viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <path d="M5 3l4 4-4 4"/>
+            </svg>
+          </a>
+        </article>
+
+        <article class="program-card reveal reveal-delay-2">
+          <div class="program-icon" aria-hidden="true">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+              <rect x="2" y="3" width="20" height="14" rx="2"/>
+              <line x1="8" y1="21" x2="16" y2="21"/>
+              <line x1="12" y1="17" x2="12" y2="21"/>
+            </svg>
+          </div>
+          <h3>College of Engineering</h3>
+          <p>Hands-on programs in computer science, mechanical, electrical, and civil engineering with access to state-of-the-art labs.</p>
+          <a href="#" class="program-link" aria-label="View Engineering programs">
+            Explore Programs
+            <svg width="14" height="14" viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <path d="M5 3l4 4-4 4"/>
+            </svg>
+          </a>
+        </article>
+
+        <article class="program-card reveal reveal-delay-3">
+          <div class="program-icon" aria-hidden="true">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/>
+              <circle cx="9" cy="7" r="4"/>
+              <path d="M23 21v-2a4 4 0 00-3-3.87"/>
+              <path d="M16 3.13a4 4 0 010 7.75"/>
+            </svg>
+          </div>
+          <h3>School of Business</h3>
+          <p>MBA and undergraduate programs in finance, marketing, entrepreneurship, and international business with global exchange opportunities.</p>
+          <a href="#" class="program-link" aria-label="View Business programs">
+            Explore Programs
+            <svg width="14" height="14" viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <path d="M5 3l4 4-4 4"/>
+            </svg>
+          </a>
+        </article>
+
+        <article class="program-card reveal reveal-delay-1">
+          <div class="program-icon" aria-hidden="true">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M22 12h-4l-3 9L9 3l-3 9H2"/>
+            </svg>
+          </div>
+          <h3>School of Medicine &amp; Health</h3>
+          <p>Pre-med, nursing, public health, and allied health programs with clinical placements at our affiliated teaching hospital.</p>
+          <a href="#" class="program-link" aria-label="View Medicine and Health programs">
+            Explore Programs
+            <svg width="14" height="14" viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <path d="M5 3l4 4-4 4"/>
+            </svg>
+          </a>
+        </article>
+
+        <article class="program-card reveal reveal-delay-2">
+          <div class="program-icon" aria-hidden="true">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M12 2L2 7l10 5 10-5-10-5z"/>
+              <path d="M6 18.5L12 21l6-2.5"/>
+              <path d="M6 12.5L12 15l6-2.5"/>
+            </svg>
+          </div>
+          <h3>School of Law</h3>
+          <p>JD and LLM programs with a focus on constitutional law, human rights, corporate law, and public policy advocacy.</p>
+          <a href="#" class="program-link" aria-label="View Law programs">
+            Explore Programs
+            <svg width="14" height="14" viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <path d="M5 3l4 4-4 4"/>
+            </svg>
+          </a>
+        </article>
+
+        <article class="program-card reveal reveal-delay-3">
+          <div class="program-icon" aria-hidden="true">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/>
+              <circle cx="12" cy="10" r="3"/>
+            </svg>
+          </div>
+          <h3>School of Architecture</h3>
+          <p>Design studios and theory programs that integrate sustainable practices, digital fabrication, and urban planning.</p>
+          <a href="#" class="program-link" aria-label="View Architecture programs">
+            Explore Programs
+            <svg width="14" height="14" viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <path d="M5 3l4 4-4 4"/>
+            </svg>
+          </a>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section id="features">
+    <div class="container">
+      <p class="section-label reveal" style="color: oklch(1 0 0 / 0.5);">Why Meridian</p>
+      <h2 class="section-title reveal">An Education That Goes Beyond the Classroom</h2>
+      <p class="section-subtitle reveal">From undergraduate research to global study, we create opportunities that transform how students see the world and their place in it.</p>
+
+      <div class="features-grid">
+        <div class="feature-item reveal reveal-delay-1">
+          <div class="feature-icon" aria-hidden="true">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72 12.84 12.84 0 00.7 2.81 2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45 12.84 12.84 0 002.81.7A2 2 0 0122 16.92z"/>
+            </svg>
+          </div>
+          <h3>24/7 Academic Support</h3>
+          <p>Writing centers, math labs, peer tutoring, and faculty office hours — help is always within reach when you need it.</p>
+        </div>
+
+        <div class="feature-item reveal reveal-delay-2">
+          <div class="feature-icon" aria-hidden="true">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+            </svg>
+          </div>
+          <h3>Research &amp; Innovation</h3>
+          <p>Undergraduate researchers work alongside faculty on funded projects in robotics, climate science, and public policy.</p>
+        </div>
+
+        <div class="feature-item reveal reveal-delay-3">
+          <div class="feature-icon" aria-hidden="true">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+              <circle cx="12" cy="12" r="10"/>
+              <path d="M2 12h20"/>
+              <path d="M12 2a15.3 15.3 0 014 10 15.3 15.3 0 01-4 10 15.3 15.3 0 01-4-10 15.3 15.3 0 014-10z"/>
+            </svg>
+          </div>
+          <h3>Global Perspectives</h3>
+          <p>Study abroad programs across 30 countries, international exchange partnerships, and globally-focused curriculum.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="testimonials">
+    <div class="container">
+      <p class="section-label reveal">Community Voices</p>
+      <h2 class="section-title reveal">What Our Students &amp; Alumni Say</h2>
+
+      <div class="testimonials-grid">
+        <blockquote class="testimonial-card reveal reveal-delay-1">
+          <p>The professors here don't just teach — they mentor. My advisor guided me through a research project that eventually got published in a peer-reviewed journal. That opportunity shaped my entire career.</p>
+          <footer class="testimonial-author">
+            <img
+              src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&w=96&q=80"
+              alt=""
+              loading="lazy"
+            >
+            <div>
+              <h4>Dr. Elena Voss</h4>
+              <span>Class of 2012, PhD in Biology</span>
+            </div>
+          </footer>
+        </blockquote>
+
+        <blockquote class="testimonial-card reveal reveal-delay-2">
+          <p>What sets Meridian apart is the community. From day one, I felt like I belonged. The collaborative culture here prepared me for a career where teamwork and communication are everything.</p>
+          <footer class="testimonial-author">
+            <img
+              src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=96&q=80"
+              alt=""
+              loading="lazy"
+            >
+            <div>
+              <h4>Marcus Chen</h4>
+              <span>Senior, Computer Science</span>
+            </div>
+          </footer>
+        </blockquote>
+
+        <blockquote class="testimonial-card reveal reveal-delay-3">
+          <p>The business school's entrepreneurship track gave me the confidence to launch my startup while still a student. The mentorship network and incubator program were invaluable.</p>
+          <footer class="testimonial-author">
+            <img
+              src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?auto=format&fit=crop&w=96&q=80"
+              alt=""
+              loading="lazy"
+            >
+            <div>
+              <h4>Aisha Patel</h4>
+              <span>MBA '21, Founder of Lumina Health</span>
+            </div>
+          </footer>
+        </blockquote>
+      </div>
+    </div>
+  </section>
+
+  <section id="cta">
+    <div class="container">
+      <div class="cta-block">
+        <h2 class="section-title reveal">Ready to Begin Your Journey?</h2>
+        <p class="reveal">Applications are open for Fall 2026. Join a community of scholars, innovators, and leaders.</p>
+        <div class="cta-actions reveal">
+          <a href="#" class="btn btn-primary">Apply Today</a>
+          <a href="#" class="btn btn-outline-dark">Request Information</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a href="#" class="nav-logo" aria-label="Meridian College home">
+            <svg width="24" height="24" viewBox="0 0 28 28" fill="none" aria-hidden="true">
+              <path d="M14 2L2 9v3l12-7 12 7V9L14 2z" fill="currentColor"/>
+              <path d="M2 14v3l12 7 12-7v-3L14 18 2 14z" fill="currentColor" opacity="0.6"/>
+              <path d="M2 19v3l12 7 12-7v-3L14 21 2 19z" fill="currentColor" opacity="0.3"/>
+            </svg>
+            Meridian
+          </a>
+          <p>Founded in 1959, Meridian College is a private institution dedicated to academic excellence, research, and community engagement.</p>
+        </div>
+
+        <div class="footer-col">
+          <h4>Academics</h4>
+          <ul>
+            <li><a href="#">Undergraduate Programs</a></li>
+            <li><a href="#">Graduate Programs</a></li>
+            <li><a href="#">Online Learning</a></li>
+            <li><a href="#">Academic Calendar</a></li>
+            <li><a href="#">Library</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4>Admissions</h4>
+          <ul>
+            <li><a href="#">Apply Now</a></li>
+            <li><a href="#">Tuition &amp; Aid</a></li>
+            <li><a href="#">Visit Campus</a></li>
+            <li><a href="#">Request Info</a></li>
+            <li><a href="#">International Students</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4>Contact</h4>
+          <ul>
+            <li><a href="tel:+15551234567">(555) 123-4567</a></li>
+            <li><a href="mailto:admissions@meridian.edu">admissions@meridian.edu</a></li>
+            <li><a href="#">742 College Avenue<br>Meridian, MA 02115</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <span>&copy; 2026 Meridian College. All rights reserved.</span>
+        <div class="footer-social">
+          <a href="#" aria-label="Follow us on Instagram">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <rect x="2" y="2" width="20" height="20" rx="5"/><path d="M16 11.37A4 4 0 1112.63 8 4 4 0 0116 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/>
+            </svg>
+          </a>
+          <a href="#" aria-label="Follow us on LinkedIn">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <path d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/>
+            </svg>
+          </a>
+          <a href="#" aria-label="Follow us on Twitter / X">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <path d="M4 4l11.733 16h4.267l-11.733 -16zM4 20l6.768 -6.768M19.5 4l-6.768 6.768"/>
+            </svg>
+          </a>
+          <a href="#" aria-label="Watch us on YouTube">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <path d="M22.54 6.42a2.78 2.78 0 00-1.94-2C18.88 4 12 4 12 4s-6.88 0-8.6.46a2.78 2.78 0 00-1.94 2A29 29 0 001 11.75a29 29 0 00.46 5.33A2.78 2.78 0 003.4 19c1.72.46 8.6.46 8.6.46s6.88 0 8.6-.46a2.78 2.78 0 001.94-2 29 29 0 00.46-5.25 29 29 0 00-.46-5.33z"/><polygon points="9.75 15.02 15.5 11.75 9.75 8.48 9.75 15.02"/>
+            </svg>
+          </a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
