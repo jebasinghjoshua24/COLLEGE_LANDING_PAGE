@@ -31,10 +31,12 @@
 
       <ul class="nav-links" role="menubar">
         <li role="none"><a href="#hero" role="menuitem" class="active">Home</a></li>
-        <li role="none"><a href="index.html#mission" role="menuitem">About</a></li>
-        <li role="none"><a href="index.html#programs" role="menuitem">Programs</a></li>
+        <li role="none"><a href="#mission" role="menuitem">About</a></li>
+        <li role="none"><a href="#programs" role="menuitem">Programs</a></li>
+        <li role="none"><a href="#facilities" role="menuitem">Facilities</a></li>
+        <li role="none"><a href="#gallery" role="menuitem">Gallery</a></li>
+        <li role="none"><a href="#contact" role="menuitem">Contact</a></li>
         <li role="none"><a href="tour.html" role="menuitem">Virtual Tour</a></li>
-        <li role="none"><a href="admissions.html" role="menuitem">Admissions</a></li>
         <li role="none"><a href="admissions.html" class="btn btn-primary nav-cta" role="menuitem">Apply Now</a></li>
       </ul>
     </div>
@@ -90,6 +92,29 @@
     </div>
   </section>
 
+  <section id="stats">
+    <div class="container">
+      <div class="stats-grid">
+        <div class="stat-card reveal">
+          <span class="stat-number" data-target="12000">0</span>
+          <span class="stat-label">Total Students</span>
+        </div>
+        <div class="stat-card reveal reveal-delay-1">
+          <span class="stat-number" data-target="80">0</span>
+          <span class="stat-label">Courses Offered</span>
+        </div>
+        <div class="stat-card reveal reveal-delay-2">
+          <span class="stat-number" data-target="65">0</span>
+          <span class="stat-label">Years of Excellence</span>
+        </div>
+        <div class="stat-card reveal reveal-delay-3">
+          <span class="stat-number" data-target="95">0</span>
+          <span class="stat-label">Placement Rate %</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
   <section id="mission">
     <div class="container">
       <div class="mission-grid">
@@ -122,10 +147,17 @@
     <div class="container">
       <p class="section-label reveal">Academic Programs</p>
       <h2 class="section-title reveal">Find Your Path</h2>
-      <p class="section-subtitle reveal">Across six schools, we offer over 80 undergraduate and graduate programs designed to prepare students for meaningful careers and purposeful lives.</p>
+      <p class="section-subtitle reveal">Browse our programs by department. Use the filters below to narrow down your options.</p>
+
+      <div class="filter-buttons reveal">
+        <button class="filter-btn active" data-filter="all">All</button>
+        <button class="filter-btn" data-filter="engineering">Engineering</button>
+        <button class="filter-btn" data-filter="arts">Arts</button>
+        <button class="filter-btn" data-filter="commerce">Commerce</button>
+      </div>
 
       <div class="programs-grid">
-        <article class="program-card reveal reveal-delay-1">
+        <article class="program-card reveal" data-category="engineering">
           <div class="program-icon" aria-hidden="true">
             <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
               <path d="M12 2L2 7l10 5 10-5-10-5z"/>
@@ -133,17 +165,12 @@
               <path d="M2 12l10 5 10-5"/>
             </svg>
           </div>
-          <h3>School of Arts &amp; Sciences</h3>
-          <p>Rigorous liberal arts education with majors spanning literature, mathematics, philosophy, biology, and the physical sciences.</p>
-          <a href="#" class="program-link" aria-label="View Arts and Sciences programs">
-            Explore Programs
-            <svg width="14" height="14" viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-              <path d="M5 3l4 4-4 4"/>
-            </svg>
-          </a>
+          <h3>B.Tech Computer Science</h3>
+          <p>Four-year program covering AI, ML, data structures, algorithms &amp; full-stack development with industry internships.</p>
+          <a href="admissions.html" class="program-link">Apply Now →</a>
         </article>
 
-        <article class="program-card reveal reveal-delay-2">
+        <article class="program-card reveal reveal-delay-1" data-category="engineering">
           <div class="program-icon" aria-hidden="true">
             <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
               <rect x="2" y="3" width="20" height="14" rx="2"/>
@@ -151,17 +178,12 @@
               <line x1="12" y1="17" x2="12" y2="21"/>
             </svg>
           </div>
-          <h3>College of Engineering</h3>
-          <p>Hands-on programs in computer science, mechanical, electrical, and civil engineering with access to state-of-the-art labs.</p>
-          <a href="#" class="program-link" aria-label="View Engineering programs">
-            Explore Programs
-            <svg width="14" height="14" viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-              <path d="M5 3l4 4-4 4"/>
-            </svg>
-          </a>
+          <h3>B.Tech Electronics</h3>
+          <p>Four-year program in embedded systems, VLSI design, IoT &amp; communication networks with hands-on lab work.</p>
+          <a href="admissions.html" class="program-link">Apply Now →</a>
         </article>
 
-        <article class="program-card reveal reveal-delay-3">
+        <article class="program-card reveal reveal-delay-2" data-category="engineering">
           <div class="program-icon" aria-hidden="true">
             <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
               <path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/>
@@ -170,33 +192,23 @@
               <path d="M16 3.13a4 4 0 010 7.75"/>
             </svg>
           </div>
-          <h3>School of Business</h3>
-          <p>MBA and undergraduate programs in finance, marketing, entrepreneurship, and international business with global exchange opportunities.</p>
-          <a href="#" class="program-link" aria-label="View Business programs">
-            Explore Programs
-            <svg width="14" height="14" viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-              <path d="M5 3l4 4-4 4"/>
-            </svg>
-          </a>
+          <h3>B.Tech Mechanical</h3>
+          <p>Four-year program in thermodynamics, robotics, CAD/CAM &amp; automobile engineering with industry projects.</p>
+          <a href="admissions.html" class="program-link">Apply Now →</a>
         </article>
 
-        <article class="program-card reveal reveal-delay-1">
+        <article class="program-card reveal reveal-delay-3" data-category="arts">
           <div class="program-icon" aria-hidden="true">
             <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
               <path d="M22 12h-4l-3 9L9 3l-3 9H2"/>
             </svg>
           </div>
-          <h3>School of Medicine &amp; Health</h3>
-          <p>Pre-med, nursing, public health, and allied health programs with clinical placements at our affiliated teaching hospital.</p>
-          <a href="#" class="program-link" aria-label="View Medicine and Health programs">
-            Explore Programs
-            <svg width="14" height="14" viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-              <path d="M5 3l4 4-4 4"/>
-            </svg>
-          </a>
+          <h3>BA English Literature</h3>
+          <p>Three-year program exploring British, American &amp; postcolonial literature with creative writing workshops.</p>
+          <a href="admissions.html" class="program-link">Apply Now →</a>
         </article>
 
-        <article class="program-card reveal reveal-delay-2">
+        <article class="program-card reveal reveal-delay-1" data-category="arts">
           <div class="program-icon" aria-hidden="true">
             <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
               <path d="M12 2L2 7l10 5 10-5-10-5z"/>
@@ -204,77 +216,209 @@
               <path d="M6 12.5L12 15l6-2.5"/>
             </svg>
           </div>
-          <h3>School of Law</h3>
-          <p>JD and LLM programs with a focus on constitutional law, human rights, corporate law, and public policy advocacy.</p>
-          <a href="#" class="program-link" aria-label="View Law programs">
-            Explore Programs
-            <svg width="14" height="14" viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-              <path d="M5 3l4 4-4 4"/>
-            </svg>
-          </a>
+          <h3>BA Psychology</h3>
+          <p>Three-year program covering cognitive, developmental &amp; clinical psychology with research methodology training.</p>
+          <a href="admissions.html" class="program-link">Apply Now →</a>
         </article>
 
-        <article class="program-card reveal reveal-delay-3">
+        <article class="program-card reveal reveal-delay-2" data-category="commerce">
           <div class="program-icon" aria-hidden="true">
             <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
               <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/>
               <circle cx="12" cy="10" r="3"/>
             </svg>
           </div>
-          <h3>School of Architecture</h3>
-          <p>Design studios and theory programs that integrate sustainable practices, digital fabrication, and urban planning.</p>
-          <a href="#" class="program-link" aria-label="View Architecture programs">
-            Explore Programs
-            <svg width="14" height="14" viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-              <path d="M5 3l4 4-4 4"/>
+          <h3>B.Com Finance</h3>
+          <p>Three-year program in financial accounting, taxation, auditing &amp; investment management with Bloomberg terminals.</p>
+          <a href="admissions.html" class="program-link">Apply Now →</a>
+        </article>
+
+        <article class="program-card reveal reveal-delay-3" data-category="commerce">
+          <div class="program-icon" aria-hidden="true">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M12 2L2 7l10 5 10-5-10-5z"/>
+              <path d="M6 18.5L12 21l6-2.5"/>
+              <path d="M6 12.5L12 15l6-2.5"/>
             </svg>
-          </a>
+          </div>
+          <h3>BBA Marketing</h3>
+          <p>Three-year program in brand management, digital marketing, consumer behavior &amp; market research analytics.</p>
+          <a href="admissions.html" class="program-link">Apply Now →</a>
         </article>
       </div>
     </div>
   </section>
 
-  <section id="features">
+  <section id="admissions-fee">
     <div class="container">
-      <p class="section-label reveal" style="color: oklch(1 0 0 / 0.5);">Why Meridian</p>
-      <h2 class="section-title reveal">An Education That Goes Beyond the Classroom</h2>
-      <p class="section-subtitle reveal">From undergraduate research to global study, we create opportunities that transform how students see the world and their place in it.</p>
+      <p class="section-label reveal">Fee Structure</p>
+      <h2 class="section-title reveal">Admissions &amp; Fee Structure</h2>
+      <p class="section-subtitle reveal">Transparent fee structure for all our programs. Click column headers to sort. Apply now to secure your seat.</p>
 
-      <div class="features-grid">
-        <div class="feature-item reveal reveal-delay-1">
-          <div class="feature-icon" aria-hidden="true">
-            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
-              <path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72 12.84 12.84 0 00.7 2.81 2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45 12.84 12.84 0 002.81.7A2 2 0 0122 16.92z"/>
-            </svg>
+      <div class="fee-table-wrapper reveal">
+        <table class="fee-table" id="feeTable">
+          <thead>
+            <tr>
+              <th data-sort="course">Course <span class="sort-icon">↕</span></th>
+              <th data-sort="duration">Duration <span class="sort-icon">↕</span></th>
+              <th data-sort="fee">Annual Fee <span class="sort-icon">↕</span></th>
+              <th data-sort="seats">Seats Available <span class="sort-icon">↕</span></th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td data-label="Course">B.Tech Computer Science</td>
+              <td data-label="Duration">4 Years</td>
+              <td data-label="Annual Fee">₹1,85,000</td>
+              <td data-label="Seats Available">120</td>
+            </tr>
+            <tr>
+              <td data-label="Course">B.Tech Electronics</td>
+              <td data-label="Duration">4 Years</td>
+              <td data-label="Annual Fee">₹1,65,000</td>
+              <td data-label="Seats Available">90</td>
+            </tr>
+            <tr>
+              <td data-label="Course">B.Tech Mechanical</td>
+              <td data-label="Duration">4 Years</td>
+              <td data-label="Annual Fee">₹1,55,000</td>
+              <td data-label="Seats Available">90</td>
+            </tr>
+            <tr>
+              <td data-label="Course">BA English Literature</td>
+              <td data-label="Duration">3 Years</td>
+              <td data-label="Annual Fee">₹45,000</td>
+              <td data-label="Seats Available">80</td>
+            </tr>
+            <tr>
+              <td data-label="Course">BA Psychology</td>
+              <td data-label="Duration">3 Years</td>
+              <td data-label="Annual Fee">₹50,000</td>
+              <td data-label="Seats Available">60</td>
+            </tr>
+            <tr>
+              <td data-label="Course">B.Com Finance</td>
+              <td data-label="Duration">3 Years</td>
+              <td data-label="Annual Fee">₹55,000</td>
+              <td data-label="Seats Available">100</td>
+            </tr>
+            <tr>
+              <td data-label="Course">BBA Marketing</td>
+              <td data-label="Duration">3 Years</td>
+              <td data-label="Annual Fee">₹65,000</td>
+              <td data-label="Seats Available">75</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="fee-cta reveal">
+        <a href="admissions.html" class="btn btn-primary">Apply for Admission</a>
+      </div>
+    </div>
+  </section>
+
+  <section id="facilities">
+    <div class="container">
+      <p class="section-label reveal">Our Facilities</p>
+      <h2 class="section-title reveal">World-Class Campus Infrastructure</h2>
+      <p class="section-subtitle reveal">State-of-the-art facilities designed to inspire learning, research, and innovation.</p>
+
+      <div class="facilities-grid">
+        <div class="facility-card reveal">
+          <div class="facility-image">
+            <img src="https://images.unsplash.com/photo-1562774053-701939374585?auto=format&fit=crop&w=600&q=80" alt="Modern library interior with reading areas" loading="lazy">
           </div>
-          <h3>24/7 Academic Support</h3>
-          <p>Writing centers, math labs, peer tutoring, and faculty office hours — help is always within reach when you need it.</p>
+          <div class="facility-body">
+            <h3>Central Library</h3>
+            <p>Over 500,000 volumes, digital archives, collaborative study spaces, and 24/7 access for students.</p>
+          </div>
         </div>
 
-        <div class="feature-item reveal reveal-delay-2">
-          <div class="feature-icon" aria-hidden="true">
-            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
-              <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
-            </svg>
+        <div class="facility-card reveal reveal-delay-1">
+          <div class="facility-image">
+            <img src="https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?auto=format&fit=crop&w=600&q=80" alt="Science laboratory with modern equipment" loading="lazy">
           </div>
-          <h3>Research &amp; Innovation</h3>
-          <p>Undergraduate researchers work alongside faculty on funded projects in robotics, climate science, and public policy.</p>
+          <div class="facility-body">
+            <h3>Research Labs</h3>
+            <p>Advanced laboratories for physics, chemistry, biology &amp; computer science with industry-grade equipment.</p>
+          </div>
         </div>
 
-        <div class="feature-item reveal reveal-delay-3">
-          <div class="feature-icon" aria-hidden="true">
-            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
-              <circle cx="12" cy="12" r="10"/>
-              <path d="M2 12h20"/>
-              <path d="M12 2a15.3 15.3 0 014 10 15.3 15.3 0 01-4 10 15.3 15.3 0 01-4-10 15.3 15.3 0 014-10z"/>
-            </svg>
+        <div class="facility-card reveal reveal-delay-2">
+          <div class="facility-image">
+            <img src="https://images.unsplash.com/photo-1571902943202-507ec2618e8f?auto=format&fit=crop&w=600&q=80" alt="Indoor sports complex with basketball court" loading="lazy">
           </div>
-          <h3>Global Perspectives</h3>
-          <p>Study abroad programs across 30 countries, international exchange partnerships, and globally-focused curriculum.</p>
+          <div class="facility-body">
+            <h3>Sports Complex</h3>
+            <p>Olympic-size swimming pool, basketball courts, gymnasium, and indoor &amp; outdoor athletic facilities.</p>
+          </div>
+        </div>
+
+        <div class="facility-card reveal reveal-delay-3">
+          <div class="facility-image">
+            <img src="https://images.unsplash.com/photo-1524178232363-1fb2b075b655?auto=format&fit=crop&w=600&q=80" alt="Auditorium with stage and seating" loading="lazy">
+          </div>
+          <div class="facility-body">
+            <h3>Auditorium &amp; Cultural Center</h3>
+            <p>1200-seat auditorium, black box theater, music rooms, and art galleries for creative expression.</p>
+          </div>
         </div>
       </div>
     </div>
   </section>
+
+  <section id="gallery">
+    <div class="container">
+      <p class="section-label reveal">Photo Gallery</p>
+      <h2 class="section-title reveal">Life at Meridian</h2>
+      <p class="section-subtitle reveal">A glimpse into campus life, events, and everyday moments that make our community special.</p>
+
+      <div class="gallery-grid">
+        <div class="gallery-item reveal">
+          <img src="https://picsum.photos/id/10/600/400" alt="Campus landscape" loading="lazy">
+          <div class="gallery-overlay">
+            <span>Campus Walkway</span>
+          </div>
+        </div>
+        <div class="gallery-item reveal reveal-delay-1">
+          <img src="https://picsum.photos/id/26/600/400" alt="Students in library" loading="lazy">
+          <div class="gallery-overlay">
+            <span>Library Study Session</span>
+          </div>
+        </div>
+        <div class="gallery-item reveal reveal-delay-2">
+          <img src="https://picsum.photos/id/28/600/400" alt="Sports event" loading="lazy">
+          <div class="gallery-overlay">
+            <span>Annual Sports Meet</span>
+          </div>
+        </div>
+        <div class="gallery-item reveal reveal-delay-3">
+          <img src="https://picsum.photos/id/36/600/400" alt="Graduation ceremony" loading="lazy">
+          <div class="gallery-overlay">
+            <span>Graduation Day</span>
+          </div>
+        </div>
+        <div class="gallery-item reveal reveal-delay-1">
+          <img src="https://picsum.photos/id/44/600/400" alt="Cultural fest" loading="lazy">
+          <div class="gallery-overlay">
+            <span>Cultural Festival</span>
+          </div>
+        </div>
+        <div class="gallery-item reveal reveal-delay-2">
+          <img src="https://picsum.photos/id/57/600/400" alt="Research lab" loading="lazy">
+          <div class="gallery-overlay">
+            <span>Research Lab</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Lightbox overlay -->
+  <div class="lightbox" id="lightbox" role="dialog" aria-label="Image viewer">
+    <button class="lightbox-close" aria-label="Close">&times;</button>
+    <img class="lightbox-image" id="lightboxImage" src="" alt="">
+  </div>
 
   <section id="testimonials">
     <div class="container">
@@ -330,14 +474,71 @@
     </div>
   </section>
 
-  <section id="cta">
+  <section id="contact">
     <div class="container">
-      <div class="cta-block">
-        <h2 class="section-title reveal">Ready to Begin Your Journey?</h2>
-        <p class="reveal">Applications are open for Fall 2026. Join a community of scholars, innovators, and leaders.</p>
-        <div class="cta-actions reveal">
-          <a href="#" class="btn btn-primary">Apply Today</a>
-          <a href="#" class="btn btn-outline-dark">Request Information</a>
+      <p class="section-label reveal">Get in Touch</p>
+      <h2 class="section-title reveal">Contact Us</h2>
+      <p class="section-subtitle reveal">Have questions? We'd love to hear from you. Send us a message or visit our campus.</p>
+
+      <div class="contact-grid">
+        <div class="contact-form-wrapper reveal">
+          <form id="contactForm" class="contact-form" novalidate>
+            <div class="form-group">
+              <label for="formName">Full Name</label>
+              <input type="text" id="formName" name="name" placeholder="Enter your full name" required>
+              <span class="form-error" id="nameError">Please enter your name.</span>
+            </div>
+            <div class="form-group">
+              <label for="formEmail">Email Address</label>
+              <input type="email" id="formEmail" name="email" placeholder="you@example.com" required>
+              <span class="form-error" id="emailError">Please enter a valid email address.</span>
+            </div>
+            <div class="form-group">
+              <label for="formSubject">Subject</label>
+              <input type="text" id="formSubject" name="subject" placeholder="What is this about?">
+            </div>
+            <div class="form-group">
+              <label for="formMessage">Message</label>
+              <textarea id="formMessage" name="message" rows="5" placeholder="Write your message here..." required></textarea>
+              <span class="form-error" id="messageError">Please enter your message.</span>
+            </div>
+            <button type="submit" class="btn btn-primary">Send Message</button>
+          </form>
+          <div class="form-success" id="formSuccess">
+            <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+            <h3>Message Sent!</h3>
+            <p>Thank you for reaching out. We'll get back to you within 24 hours.</p>
+          </div>
+        </div>
+
+        <div class="contact-info-wrapper reveal reveal-delay-1">
+          <div class="contact-info">
+            <h3>Visit Us</h3>
+            <p>742 College Avenue, Meridian, MA 02115</p>
+          </div>
+          <div class="contact-info">
+            <h3>Call Us</h3>
+            <p><a href="tel:+15551234567">(555) 123-4567</a></p>
+          </div>
+          <div class="contact-info">
+            <h3>Email Us</h3>
+            <p><a href="mailto:admissions@meridian.edu">admissions@meridian.edu</a></p>
+          </div>
+          <div class="contact-info">
+            <h3>Office Hours</h3>
+            <p>Mon — Fri: 9:00 AM — 5:00 PM<br>Sat: 10:00 AM — 2:00 PM</p>
+          </div>
+          <div class="contact-map reveal">
+            <iframe
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2948.158244119837!2d-71.0958!3d42.3398!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89e37a0b0b0b0b0b%3A0x0!2sMeridian%20College!5e0!3m2!1sen!2sus!4v1"
+              width="100%" height="220" style="border:0; border-radius: 12px;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"
+              title="Meridian College location on Google Maps"
+            ></iframe>
+          </div>
+          <div class="contact-cta">
+            <p>Ready to join us?</p>
+            <a href="admissions.html" class="btn btn-primary">Apply Today</a>
+          </div>
         </div>
       </div>
     </div>

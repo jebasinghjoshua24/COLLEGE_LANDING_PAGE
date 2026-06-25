@@ -124,6 +124,204 @@ document.addEventListener('keydown', (e) => {
   }
 });
 
+/* ===== Animated Stats Counters ===== */
+const statsSection = document.getElementById('stats');
+const statNumbers = document.querySelectorAll('.stat-number');
+
+if (statsSection && 'IntersectionObserver' in window) {
+  let countersStarted = false;
+  const statsObserver = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting && !countersStarted) {
+          countersStarted = true;
+          statNumbers.forEach((el) => {
+            const target = parseInt(el.dataset.target);
+            if (isNaN(target)) return;
+            el.textContent = '0';
+            const duration = 2000;
+            const steps = 60;
+            const increment = target / steps;
+            let current = 0;
+            let step = 0;
+            const timer = setInterval(() => {
+              step++;
+              current = Math.round(increment * step);
+              el.textContent = current.toLocaleString();
+              if (step >= steps) {
+                el.textContent = target.toLocaleString();
+                clearInterval(timer);
+              }
+            }, duration / steps);
+          });
+          statsObserver.unobserve(entry.target);
+        }
+      });
+    },
+    { threshold: 0.3 }
+  );
+  statsObserver.observe(statsSection);
+}
+
+/* ===== Course Filter ===== */
+const filterBtns = document.querySelectorAll('.filter-btn');
+const programCards = document.querySelectorAll('.program-card[data-category]');
+
+filterBtns.forEach((btn) => {
+  btn.addEventListener('click', () => {
+    filterBtns.forEach((b) => b.classList.remove('active'));
+    btn.classList.add('active');
+    const filter = btn.dataset.filter;
+    programCards.forEach((card) => {
+      if (filter === 'all' || card.dataset.category === filter) {
+        card.style.display = '';
+      } else {
+        card.style.display = 'none';
+      }
+    });
+  });
+});
+
+/* ===== Fee Table Sorting ===== */
+const feeTable = document.getElementById('feeTable');
+if (feeTable) {
+  const headers = feeTable.querySelectorAll('thead th[data-sort]');
+  let sortState = { key: '', asc: true };
+
+  headers.forEach((th) => {
+    th.addEventListener('click', () => {
+      const key = th.dataset.sort;
+      const tbody = feeTable.querySelector('tbody');
+      const rows = Array.from(tbody.querySelectorAll('tr'));
+
+      if (sortState.key === key) sortState.asc = !sortState.asc;
+      else sortState = { key, asc: true };
+
+      headers.forEach((h) => {
+        h.classList.remove('sort-asc', 'sort-desc');
+      });
+      th.classList.add(sortState.asc ? 'sort-asc' : 'sort-desc');
+
+      rows.sort((a, b) => {
+        const aVal = a.querySelector(`td[data-label="${th.textContent.trim().split(' ')[0]}"]`)?.textContent.trim() || a.cells[Array.from(th.parentNode.children).indexOf(th)]?.textContent.trim() || '';
+        const bVal = b.querySelector(`td[data-label="${th.textContent.trim().split(' ')[0]}"]`)?.textContent.trim() || b.cells[Array.from(th.parentNode.children).indexOf(th)]?.textContent.trim() || '';
+
+        let aNum = parseFloat(aVal.replace(/[₹,]/g, ''));
+        let bNum = parseFloat(bVal.replace(/[₹,]/g, ''));
+
+        if (!isNaN(aNum) && !isNaN(bNum)) {
+          return sortState.asc ? aNum - bNum : bNum - aNum;
+        }
+        return sortState.asc ? aVal.localeCompare(bVal) : bVal.localeCompare(aVal);
+      });
+
+      rows.forEach((row) => tbody.appendChild(row));
+    });
+  });
+}
+
+/* ===== Gallery Lightbox ===== */
+const lightbox = document.getElementById('lightbox');
+const lightboxImage = document.getElementById('lightboxImage');
+const lightboxClose = lightbox?.querySelector('.lightbox-close');
+
+document.querySelectorAll('.gallery-item').forEach((item) => {
+  item.addEventListener('click', () => {
+    const img = item.querySelector('img');
+    if (!img || !lightbox) return;
+    lightboxImage.src = img.src;
+    lightboxImage.alt = img.alt;
+    lightbox.classList.add('open');
+    document.body.style.overflow = 'hidden';
+  });
+});
+
+if (lightboxClose) {
+  lightboxClose.addEventListener('click', closeLightbox);
+}
+
+if (lightbox) {
+  lightbox.addEventListener('click', (e) => {
+    if (e.target === lightbox) closeLightbox();
+  });
+}
+
+document.addEventListener('keydown', (e) => {
+  if (e.key === 'Escape' && lightbox?.classList.contains('open')) {
+    closeLightbox();
+  }
+});
+
+function closeLightbox() {
+  if (!lightbox) return;
+  lightbox.classList.remove('open');
+  document.body.style.overflow = '';
+}
+
+/* ===== Contact Form Validation ===== */
+const contactForm = document.getElementById('contactForm');
+if (contactForm) {
+  const nameInput = document.getElementById('formName');
+  const emailInput = document.getElementById('formEmail');
+  const messageInput = document.getElementById('formMessage');
+  const nameError = document.getElementById('nameError');
+  const emailError = document.getElementById('emailError');
+  const messageError = document.getElementById('messageError');
+  const formSuccess = document.getElementById('formSuccess');
+
+  function validateEmail(email) {
+    return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
+  }
+
+  function validateField(input, errorEl) {
+    if (!input.value.trim()) {
+      input.classList.add('error');
+      errorEl.classList.add('visible');
+      return false;
+    }
+    if (input.type === 'email' && !validateEmail(input.value.trim())) {
+      input.classList.add('error');
+      errorEl.classList.add('visible');
+      return false;
+    }
+    input.classList.remove('error');
+    errorEl.classList.remove('visible');
+    return true;
+  }
+
+  function clearErrors() {
+    [nameInput, emailInput, messageInput].forEach((el) => el.classList.remove('error'));
+    [nameError, emailError, messageError].forEach((el) => el.classList.remove('visible'));
+  }
+
+  [nameInput, emailInput, messageInput].forEach((input) => {
+    input.addEventListener('input', () => {
+      const errorMap = {
+        [nameInput.id]: nameError,
+        [emailInput.id]: emailError,
+        [messageInput.id]: messageError,
+      };
+      if (input.value.trim()) {
+        input.classList.remove('error');
+        errorMap[input.id]?.classList.remove('visible');
+      }
+    });
+  });
+
+  contactForm.addEventListener('submit', (e) => {
+    e.preventDefault();
+    clearErrors();
+    const isNameValid = validateField(nameInput, nameError);
+    const isEmailValid = validateField(emailInput, emailError);
+    const isMessageValid = validateField(messageInput, messageError);
+
+    if (isNameValid && isEmailValid && isMessageValid) {
+      contactForm.style.display = 'none';
+      formSuccess.classList.add('show');
+    }
+  });
+}
+
 /* ===== Admissions Multi-Step Form ===== */
 const appForm = document.getElementById('app-form');
 if (appForm) {
